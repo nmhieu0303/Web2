@@ -1,5 +1,14 @@
+const User = require('../models/user');
+const ensureLoggedIn = require('../middlewares/ensure_logged_in');
 const express = require('express');
 const router = express.Router();
+
+router.use(ensureLoggedIn);
+
+router.use(function(req, res, next) {
+    res.locals.title = 'Cộng hai số';
+    next();
+});
 
 router.get('/', function(req, res) {
     res.render('sum/form');
