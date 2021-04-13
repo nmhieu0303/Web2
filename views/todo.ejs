@@ -1,0 +1,54 @@
+<div class="row">
+    <div class="col-6">
+        <form method="post">
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Việc cần làm</label>
+                <input type="text" class="form-control" id="todo" name="name" placeholder="Bạn cần làm gì?">
+            </div>
+            <div class="form-group">
+                <label>Trạng trái</label>
+                <select class="form-control" id="done" name="done">
+                    <option value="false">Chưa hoàn thành</option>
+                    <option value="true" >Hoàn thành</option>
+                </select>
+            </div>
+            <div class="text-center">
+                <button type="submit" name="" id="" class="btn btn-primary">
+                    Thêm công việc</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-6">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="text-center">Danh sách việc cần làm</h4>
+            </div>
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Việc</th>
+                            <th scope="col">Trạng thái</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% toDoList.forEach(todo =>{ %>
+                            <tr>
+                                <td>
+                                    <%= todo.name %>
+                                </td>
+                                <td>
+                                    <%if(todo.done){ %>
+                                        <span class="badge badge-success">Hoàn thành</span>
+                                        <%} else {%>
+                                            <span class="badge badge-danger">Chưa hoàn thành</span>
+                                            <% } %>
+                                </td>
+                            </tr>
+                            <% }) %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>

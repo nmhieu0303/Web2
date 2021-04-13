@@ -1,14 +1,17 @@
+const asyncHandler = require('express-async-handler');
 const User = require('../models/user');
 
-module.exports = function(req, res, next) {
+module.exports = asyncHandler(async function(req, res, next) {
     const { userId } = req.session;
     res.locals.currentUser = null;
     if (userId) {
-        const user = User.findById(userId);
+        const user = await User.findById(userId)
         if (user) {
             req.currentUser = user;
             res.locals.currentUser = user;
         }
+        next();
+    } else {
+        next();
     }
-    next();
-}
+});

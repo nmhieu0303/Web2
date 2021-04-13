@@ -1,5 +1,5 @@
-const User = require('../models/user');
-const ensureLoggedIn = require('../middlewares/ensure_logged_in');
+const User = require('../app/models/user');
+const ensureLoggedIn = require('../app/middlewares/ensure_logged_in');
 const express = require('express');
 const router = express.Router();
 
