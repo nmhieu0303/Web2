@@ -20,6 +20,9 @@ const User = db.define('User', {
         type: DataTypes.STRING,
         allowNull: false
             // allowNull defaults to true
+    },
+    active: {
+        type: DataTypes.STRING,
     }
 });
 

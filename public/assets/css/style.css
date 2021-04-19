@@ -1,0 +1,11 @@
+.inputAvatar--icon {
+    font-size: 28px;
+    padding: 10px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    background: grey;
+}

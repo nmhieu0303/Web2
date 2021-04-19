@@ -1,0 +1,12 @@
+<% if (typeof(title)!== 'undefined'){  %>
+    <h3 class="text-center my-3">
+        <%- title  %>
+    </h3>
+    <%}  %>
+        <% if (typeof(msg) !== 'undefined') {%>
+            <div class="alert alert-primary" role="alert">
+                <%= msg %>
+            </div>
+            <hr/>
+            <a href="login" class="btn btn-primary">Tiến hành đăng nhập</a>
+            <% } %>
