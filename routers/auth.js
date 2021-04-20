@@ -59,7 +59,7 @@ router.post('/register', async function(req, res) {
                         active: token,
                     })
                     .then((user) => {
-                        const activeURL = `http://localhost:3000/auth/active?username=${user.username}&token=${token}`;
+                        const activeURL = `https://nmhieu-18600087.herokuapp.com/auth/active?username=${user.username}&token=${token}`;
                         emailController.sendMail(user.email, 'Kích hoạt tài khoản đăng nhập ✔', 'Click vào đường link để kích hoạt tài khoản ' + activeURL, activeURL)
                         res.render("auth/login");
                     })
@@ -108,8 +108,5 @@ router.get('/active', function(req, res) {
     })
 })
 
-router.get('/profile', (req, res) => {
-    res.locals.title = "Trang cá nhân";
-    res.render('user/profile');
-})
+
 module.exports = router;
